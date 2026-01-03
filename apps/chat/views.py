@@ -131,7 +131,8 @@ import os
 def chat_with_gemini(request):
     """
     Controlador para chat directo con Gemini 2.0 Flask via API.
-    Endpoint: /chat/api/ (o /api/chat/ si se configura en root)
+    Soporta memoria conversacional (Historía) basada en sesiones de Django.
+    Endpoint: /chat/api/
     """
     try:
         # 1. Configuración
@@ -151,32 +152,67 @@ def chat_with_gemini(request):
         if not user_message:
             return JsonResponse({'error': 'Mensaje vacío'}, status=400)
 
-        # 3. Configurar Modelo y Prompt
-        system_prompt = (
-            "Eres el Asistente Técnico y Comercial de 'bestIA', una agencia de IA en Puerto Montt, Chile. "
-            "Tu tono es profesional y técnico. Si preguntan por servicios, ofrece desarrollo y consultoría. "
-            "Si preguntan por cursos, menciona 'IAlfabetización'. "
-            "Tu objetivo es filtrar leads: si hay intención de compra, sugiere WhatsApp."
+        # 3. Configurar Personalidad (System Prompt)
+        CONTEXTO_BESTIA = (
+            "Eres el Consultor Técnico Senior de 'bestIA', ingeniería y desarrollo de software en Puerto Montt, Chile. "
+            "Tu Identidad: Profesional técnico, sobrio, experto. No usas saludos robóticos. "
+            "Base de Conocimiento: "
+            "1. Ubicación: Puerto Montt, Región de Los Lagos. "
+            "2. Servicios: Desarrollo a Medida (SaaS, Web Apps), Automatización IA, Consultoría de Arquitectura de Software. "
+            "3. Cursos: 'IAlfabetización' (programa práctico de IA para empresas/ejecutivos, no para programadores). "
+            "Reglas de Comportamiento: "
+            "1. NO uses listas con viñetas (bullets) salvo que sea IMPRESCINDIBLE. Prefiere párrafos cortos y fluidos. "
+            "2. Concisión Extrema: Máximo 3 oraciones por idea principal. Ve al grano. "
+            "3. Tono: Conversacional de negocios. Evita 'Espero haberte ayudado'. "
+            "4. Objetivo Comercial: Calificar el lead. Si preguntan 'qué hacen', explica brevemente y cierra con una pregunta "
+            "como '¿Buscas esto para tu empresa o para formación personal?'. Si hay intención de compra clara, sugiere contactar por WhatsApp."
         )
-        
-        # Intentar con gemini-2.0-flash-exp, fallback a 1.5-flash
+
+        # 4. Inicializar Modelo
         model_name = "gemini-2.0-flash-exp"
         try:
             model = genai.GenerativeModel(
                 model_name=model_name,
-                system_instruction=system_prompt
+                system_instruction=CONTEXTO_BESTIA
             )
         except Exception:
             model_name = "gemini-1.5-flash"
             model = genai.GenerativeModel(
                 model_name=model_name,
-                system_instruction=system_prompt
+                system_instruction=CONTEXTO_BESTIA
             )
 
-        # 4. Generar Respuesta
-        # Nota: Para historial real, necesitaríamos pasar el chat history. 
-        # Por ahora es single-turn como pidió el usuario.
-        response = model.generate_content(user_message)
+        # 5. Gestión de Memoria (Historial en Sesión)
+        # Recuperar historial de la sesión (o lista vacía)
+        # Estructura esperada por SDK Python: [{'role': 'user', 'parts': [...]}, {'role': 'model', 'parts': [...]}]
+        history_key = 'gemini_chat_history'
+        raw_history = request.session.get(history_key, [])
+        
+        # Validar y limpiar historial si es necesario (para evitar errores de formato antiguos)
+        validated_history = []
+        for msg in raw_history:
+            if 'role' in msg and 'parts' in msg:
+                validated_history.append(msg)
+        
+        # Iniciar chat con historial
+        chat = model.start_chat(history=validated_history)
+
+        # 6. Generar Respuesta
+        response = chat.send_message(user_message)
+        
+        # 7. Actualizar y Guardar Historial
+        # El objeto 'chat' actualiza su history interno, pero debemos serializarlo para guardar en sesión
+        # Lo hacemos manualmente para asegurar compatibilidad JSON simple
+        
+        # Agregamos el nuevo turno a nuestro historial validado
+        new_history = validated_history + [
+            {'role': 'user', 'parts': [user_message]},
+            {'role': 'model', 'parts': [response.text]}
+        ]
+        
+        # Guardar en sesión
+        request.session[history_key] = new_history
+        request.session.modified = True
         
         return JsonResponse({
             "response": response.text,
@@ -186,4 +222,6 @@ def chat_with_gemini(request):
 
     except Exception as e:
         print(f"Error en Gemini Chat: {e}")
+        # En caso de error (ej. token limit), podrías querer limpiar el historial
+        # request.session['gemini_chat_history'] = [] 
         return JsonResponse({'error': str(e), 'status': 'error'}, status=500)
