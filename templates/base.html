@@ -133,6 +133,88 @@
 
             // Close on global event (can be triggered from anywhere)
             window.closeChatModal = closeChat;
+
+            // Chat Logic
+            const chatForm = chatModal.querySelector('form');
+            const chatInput = chatForm.querySelector('input');
+            const chatMessages = document.getElementById('chat-messages');
+
+            const appendMessage = (role, text) => {
+                const isUser = role === 'user';
+                const div = document.createElement('div');
+                div.className = `flex items-start gap-3 ${isUser ? 'flex-row-reverse' : ''}`;
+
+                const icon = isUser ? 'person' : 'smart_toy';
+                const bgClass = isUser ? 'bg-primary/20 border-primary/30' : 'bg-surface-dark border-slate-700';
+
+                div.innerHTML = `
+                    <div class="size-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30 flex-shrink-0">
+                        <span class="material-symbols-outlined text-primary text-xs">${icon}</span>
+                    </div>
+                    <div class="${bgClass} border rounded-lg p-3 text-sm text-slate-300 ${isUser ? 'rounded-tr-none' : 'rounded-tl-none'}">
+                        <p>${text}</p>
+                    </div>
+                `;
+                chatMessages.appendChild(div);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            };
+
+            chatForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const message = chatInput.value.trim();
+                if (!message) return;
+
+                // 1. Show User Message
+                appendMessage('user', message);
+                chatInput.value = '';
+                chatInput.disabled = true;
+
+                // 2. Show Loading State (temporary)
+                const loadingId = 'loading-' + Date.now();
+                const loadingDiv = document.createElement('div');
+                loadingDiv.id = loadingId;
+                loadingDiv.className = "flex items-start gap-3";
+                loadingDiv.innerHTML = `
+                    <div class="size-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30 flex-shrink-0">
+                        <span class="material-symbols-outlined text-primary text-xs animate-spin">sync</span>
+                    </div>
+                    <div class="bg-surface-dark border border-slate-700 rounded-lg rounded-tl-none p-3 text-sm text-slate-400">
+                        <p>Escribiendo...</p>
+                    </div>
+                `;
+                chatMessages.appendChild(loadingDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                try {
+                    // 3. Call Backend
+                    const response = await fetch('/chat/api/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ message: message })
+                    });
+
+                    const data = await response.json();
+
+                    // Remove Loading
+                    document.getElementById(loadingId).remove();
+
+                    if (data.status === 'success' || data.response) {
+                        appendMessage('assistant', data.response || data.error);
+                    } else {
+                        appendMessage('assistant', 'Lo siento, tuve un error de conexión.');
+                    }
+
+                } catch (error) {
+                    document.getElementById(loadingId).remove();
+                    appendMessage('assistant', 'Error de red. Por favor intenta de nuevo.');
+                    console.error('Chat Error:', error);
+                } finally {
+                    chatInput.disabled = false;
+                    chatInput.focus();
+                }
+            });
         });
     </script>
 </body>

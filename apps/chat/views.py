@@ -118,3 +118,72 @@ def get_history(request):
         'session_id': str(session.session_id),
         'messages': list(messages)
     })
+
+
+# =============================================================================
+# Gemini Integration (New)
+# =============================================================================
+import google.generativeai as genai
+import os
+
+@require_POST
+@csrf_exempt
+def chat_with_gemini(request):
+    """
+    Controlador para chat directo con Gemini 2.0 Flask via API.
+    Endpoint: /chat/api/ (o /api/chat/ si se configura en root)
+    """
+    try:
+        # 1. Configuración
+        api_key = os.environ.get("GOOGLE_API_KEY")
+        if not api_key:
+            return JsonResponse({'error': 'API Key no configurada'}, status=500)
+        
+        genai.configure(api_key=api_key)
+        
+        # 2. Obtener datos
+        try:
+            data = json.loads(request.body)
+            user_message = data.get('message', '').strip()
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'JSON inválido'}, status=400)
+
+        if not user_message:
+            return JsonResponse({'error': 'Mensaje vacío'}, status=400)
+
+        # 3. Configurar Modelo y Prompt
+        system_prompt = (
+            "Eres el Asistente Técnico y Comercial de 'bestIA', una agencia de IA en Puerto Montt, Chile. "
+            "Tu tono es profesional y técnico. Si preguntan por servicios, ofrece desarrollo y consultoría. "
+            "Si preguntan por cursos, menciona 'IAlfabetización'. "
+            "Tu objetivo es filtrar leads: si hay intención de compra, sugiere WhatsApp."
+        )
+        
+        # Intentar con gemini-2.0-flash-exp, fallback a 1.5-flash
+        model_name = "gemini-2.0-flash-exp"
+        try:
+            model = genai.GenerativeModel(
+                model_name=model_name,
+                system_instruction=system_prompt
+            )
+        except Exception:
+            model_name = "gemini-1.5-flash"
+            model = genai.GenerativeModel(
+                model_name=model_name,
+                system_instruction=system_prompt
+            )
+
+        # 4. Generar Respuesta
+        # Nota: Para historial real, necesitaríamos pasar el chat history. 
+        # Por ahora es single-turn como pidió el usuario.
+        response = model.generate_content(user_message)
+        
+        return JsonResponse({
+            "response": response.text,
+            "status": "success",
+            "model": model_name
+        })
+
+    except Exception as e:
+        print(f"Error en Gemini Chat: {e}")
+        return JsonResponse({'error': str(e), 'status': 'error'}, status=500)
