@@ -1,0 +1,18 @@
+# Django
+Django>=5.0,<6.0
+gunicorn>=21.0
+
+# Database
+psycopg2-binary>=2.9
+dj-database-url>=2.1
+
+# Configuration
+python-decouple>=3.8
+
+# Static Files
+whitenoise>=6.6
+
+# For future chat functionality
+# openai>=1.0  # Uncomment when implementing chatbot
+# anthropic>=0.8  # Alternative LLM provider
+# pgvector>=0.2  # For RAG with PostgreSQL

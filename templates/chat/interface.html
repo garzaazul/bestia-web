@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Chat - bestIA Engineering{% endblock %}
+
+{% block content %}
+<section class="bg-background-dark min-h-screen py-24">
+    <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+        <div class="w-full max-w-[800px]">
+            <div class="text-center mb-12">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-900/30 border border-yellow-500/20 w-fit mb-4">
+                    <span class="size-2 rounded-full bg-yellow-500 animate-pulse"></span>
+                    <span class="text-yellow-500 text-xs font-bold uppercase tracking-wider">En desarrollo</span>
+                </div>
+                <h1 class="text-white text-4xl font-bold mb-4">Asistente IA de bestIA</h1>
+                <p class="text-slate-400 text-lg">
+                    Nuestro chatbot inteligente está en desarrollo. Pronto podrás hacer consultas sobre nuestros
+                    servicios de forma instantánea.
+                </p>
+            </div>
+
+            <!-- Placeholder chat interface -->
+            <div class="bg-surface-dark rounded-xl border border-border-dark p-8">
+                <div class="flex flex-col items-center gap-6 py-12">
+                    <div class="size-20 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-4xl">smart_toy</span>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-white text-xl font-bold mb-2">Chatbot en construcción</h3>
+                        <p class="text-slate-400 text-sm max-w-md">
+                            Estamos entrenando nuestro asistente con información relevante sobre IA empresarial.
+                            Mientras tanto, puedes contactarnos directamente.
+                        </p>
+                    </div>
+                    <a href="{% url 'leads:contact' %}"
+                        class="flex items-center gap-2 px-6 py-3 rounded-lg bg-primary hover:bg-primary-hover text-white font-bold transition-colors">
+                        <span class="material-symbols-outlined text-sm">mail</span>
+                        Contactar ahora
+                    </a>
+                </div>
+            </div>
+
+            <!-- Features coming soon -->
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex items-start gap-3 p-4 rounded-lg bg-surface-dark/50 border border-border-dark">
+                    <span class="material-symbols-outlined text-primary">psychology</span>
+                    <div>
+                        <h4 class="text-white font-medium">Respuestas inteligentes</h4>
+                        <p class="text-slate-500 text-xs mt-1">Basadas en nuestra experiencia en IA</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-lg bg-surface-dark/50 border border-border-dark">
+                    <span class="material-symbols-outlined text-primary">description</span>
+                    <div>
+                        <h4 class="text-white font-medium">RAG integrado</h4>
+                        <p class="text-slate-500 text-xs mt-1">Con nuestra base de conocimiento</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-lg bg-surface-dark/50 border border-border-dark">
+                    <span class="material-symbols-outlined text-primary">schedule</span>
+                    <div>
+                        <h4 class="text-white font-medium">24/7 disponible</h4>
+                        <p class="text-slate-500 text-xs mt-1">Respuestas instantáneas siempre</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,84 @@
+<!-- Footer -->
+<footer class="bg-[#0b0d11] border-t border-border-dark pt-16 pb-8" id="contacto">
+    <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+        <div class="w-full max-w-[1280px] flex flex-col gap-16">
+            <!-- Footer CTA -->
+            <div
+                class="flex flex-col md:flex-row items-center justify-between gap-8 pb-16 border-b border-border-dark/50">
+                <div class="text-center md:text-left">
+                    <h2 class="text-white text-2xl md:text-3xl font-bold tracking-tight mb-2">¿Listo para escalar con
+                        ingeniería real?</h2>
+                    <p class="text-slate-400">Diagnóstico inicial sin compromiso para empresas calificadas.</p>
+                </div>
+                <a href="{% url 'leads:contact' %}"
+                    class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-primary-hover text-white text-base font-bold transition-colors">
+                    Agendar Diagnóstico
+                </a>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-2 text-white">
+                        <span class="material-symbols-outlined text-primary">architecture</span>
+                        <span class="font-bold text-lg">bestIA Engineering</span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Arquitectura de software inteligente para el mundo real. Sin humo, solo código y estrategia.
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-white font-bold">Navegación</h4>
+                    <ul class="flex flex-col gap-2">
+                        <li><a class="text-slate-400 hover:text-white text-sm transition-colors"
+                                href="#soluciones">Soluciones Empresas</a></li>
+                        <li><a class="text-slate-400 hover:text-white text-sm transition-colors"
+                                href="#ialfabetizacion">IAlfabetización</a></li>
+                        <li><a class="text-slate-400 hover:text-white text-sm transition-colors"
+                                href="#nosotros">Nosotros</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-white font-bold">Contacto</h4>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-slate-500 text-sm mt-1">location_on</span>
+                            <span class="text-slate-400 text-sm">Puerto Montt,<br />Región de Los Lagos, Chile</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-slate-500 text-sm">mail</span>
+                            <a class="text-slate-400 text-sm hover:text-primary transition-colors"
+                                href="mailto:contacto@bestia.cl">contacto@bestia.cl</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-white font-bold">Síguenos</h4>
+                    <div class="flex gap-4">
+                        <a class="size-10 rounded bg-surface-dark border border-border-dark flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 transition-colors"
+                            href="#" aria-label="LinkedIn">
+                            <span class="material-symbols-outlined">work</span>
+                        </a>
+                        <a class="size-10 rounded bg-surface-dark border border-border-dark flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 transition-colors"
+                            href="#" aria-label="Instagram">
+                            <span class="material-symbols-outlined">photo_camera</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 text-xs text-slate-600">
+                <p>Copyright © 2026 bestIA Engineering. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a class="hover:text-slate-400 transition-colors" href="{% url 'core:privacy' %}">Política de
+                        Privacidad</a>
+                    <a class="hover:text-slate-400 transition-colors" href="#">Uso de Datos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

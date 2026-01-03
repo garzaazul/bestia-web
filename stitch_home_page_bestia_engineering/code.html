@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>bestIA Engineering - Soluciones de IA B2B</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "primary-hover": "#1d6bf3",
+              "background-light": "#f6f6f8",
+              "background-dark": "#111318",
+              "surface-dark": "#1c212b",
+              "border-dark": "#282e39",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"],
+              "body": ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom styles for native elements */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 w-full bg-[#111318]/90 backdrop-blur-md border-b border-border-dark">
+<div class="px-4 md:px-10 lg:px-40 flex justify-center py-3">
+<div class="flex items-center justify-between w-full max-w-[1280px]">
+<!-- Logo -->
+<div class="flex items-center gap-3 text-white">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-[32px]">architecture</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">bestIA Engineering</h2>
+</div>
+<!-- Desktop Nav & CTA -->
+<div class="hidden lg:flex items-center gap-8">
+<nav class="flex items-center gap-6">
+<a class="text-slate-300 hover:text-white text-sm font-medium transition-colors" href="#soluciones">Soluciones Empresas</a>
+<a class="text-slate-300 hover:text-white text-sm font-medium transition-colors" href="#ialfabetizacion">IAlfabetización</a>
+<a class="text-slate-300 hover:text-white text-sm font-medium transition-colors" href="#nosotros">Nosotros</a>
+<a class="text-slate-300 hover:text-white text-sm font-medium transition-colors" href="#contacto">Contacto</a>
+</nav>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary hover:bg-primary-hover text-white text-sm font-bold transition-colors">
+<span class="truncate">Agendar Diagnóstico</span>
+</button>
+</div>
+<!-- Mobile Menu Button (Icon only for visual consistency) -->
+<div class="lg:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative flex min-h-[85vh] w-full flex-col justify-center bg-background-dark overflow-hidden">
+<!-- Abstract Technical Background -->
+<div class="absolute inset-0 z-0 bg-cover bg-center opacity-40" data-alt="Abstract dark blue network mesh background representing data architecture" style='background-image: linear-gradient(rgba(17, 19, 24, 0.7) 0%, rgba(17, 19, 24, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCaNOhnlkcmGWDLb307qMTIkTJ7p09f41XVcOJpp21Y10kq8Ua9DeAwAMkFZGfz2dVoh2phvFkrqmSwbay1TU-DXiV_VOyGKhclCBLPjpW_EhXnVs56XYPuFcDuXxf6RofVddRwmWyjCmQOH51GH14M94F1SVpg4pEkxZ7ujvQqg8io33ymtH2we_RNWGrSAJjiVoM_zWz2Il4ZWvCld-N7cwTsh0J8_HDvwZ_KjPYXl4PQ4w3753ybmoG9LG9oNKJBlhsmrmgCy8");'>
+</div>
+<div class="relative z-10 px-4 md:px-10 lg:px-40 flex flex-1 items-center justify-center py-10">
+<div class="max-w-[960px] flex flex-col items-start gap-8">
+<div class="flex flex-col gap-4 text-left">
+<h1 class="text-white text-5xl md:text-6xl font-black leading-[1.1] tracking-[-0.033em] max-w-[800px]">
+                        Ingeniería de Inteligencia Artificial para Empresas Reales
+                    </h1>
+<h2 class="text-slate-300 text-lg md:text-xl font-normal leading-relaxed max-w-[640px]">
+                        Diseñamos sistemas autónomos que reducen costos, automatizan procesos y forman equipos capaces de usarlos.
+                    </h2>
+</div>
+<div class="flex flex-wrap gap-4 mt-2">
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary-hover text-white text-base font-bold tracking-[0.015em] transition-colors shadow-lg shadow-primary/20">
+<span>Ver Soluciones Empresas</span>
+</button>
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-transparent border border-slate-600 hover:border-white hover:bg-white/5 text-white text-base font-bold tracking-[0.015em] transition-colors">
+<span>IAlfabetización Digital</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-500">
+<span class="material-symbols-outlined text-3xl">arrow_downward</span>
+</div>
+</section>
+<!-- About Section (Nosotros) -->
+<section class="bg-background-dark py-20 border-b border-border-dark" id="nosotros">
+<div class="px-4 md:px-10 lg:px-40 flex justify-center">
+<div class="w-full max-w-[1080px]">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-6">
+<h2 class="text-white text-3xl md:text-4xl font-bold leading-tight">
+                            No somos Prompt Engineers. <br/> <span class="text-primary">Somos Arquitectos de Software.</span>
+</h2>
+<p class="text-slate-400 text-lg leading-relaxed">
+                            Más allá de las tendencias, construimos infraestructura lógica. Transformamos operaciones desordenadas en flujos de trabajo eficientes impulsados por modelos de lenguaje y automatización robusta.
+                        </p>
+</div>
+<div class="flex flex-col gap-5 bg-surface-dark p-8 rounded-xl border border-border-dark shadow-2xl">
+<div class="flex items-start gap-4">
+<div class="mt-1 p-2 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-xl">code</span>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg">Experiencia real en desarrollo</h3>
+<p class="text-slate-400 text-sm mt-1">Fundamentos sólidos en ingeniería de software y docencia técnica.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="mt-1 p-2 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-xl">shield</span>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg">Seguridad y Escalabilidad</h3>
+<p class="text-slate-400 text-sm mt-1">Enfoque prioritario en protección de datos y ROI medible.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="mt-1 p-2 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-xl">factory</span>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg">Tecnología sin humo</h3>
+<p class="text-slate-400 text-sm mt-1">Sin dependencia artificial. Soluciones que funcionan hoy y mañana.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- B2B Solutions Section -->
+<section class="bg-background-dark py-24" id="soluciones">
+<div class="px-4 md:px-10 lg:px-40 flex justify-center">
+<div class="w-full max-w-[1080px] flex flex-col gap-12">
+<!-- Header -->
+<div class="flex flex-col gap-4 max-w-[720px]">
+<h2 class="text-white text-3xl md:text-4xl font-bold tracking-tight">Arquitectura de Soluciones IA</h2>
+<p class="text-slate-400 text-lg">
+                        Estrategias de automatización y consultoría técnica. Inversión inteligente para resultados operativos tangibles.
+                    </p>
+</div>
+<!-- Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group flex flex-col justify-between bg-surface-dark p-6 rounded-lg border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+<div class="flex flex-col gap-4">
+<div class="size-12 rounded-lg bg-background-dark flex items-center justify-center border border-border-dark group-hover:border-primary/30 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">smart_toy</span>
+</div>
+<h3 class="text-white text-xl font-bold">Agentes Autónomos &amp; RAG</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+                                Sistemas que razonan sobre tu propia base de conocimiento. Ideales para soporte complejo y análisis documental.
+                            </p>
+</div>
+<a class="mt-6 text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all" href="#">
+                            Ver más <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col justify-between bg-surface-dark p-6 rounded-lg border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+<div class="flex flex-col gap-4">
+<div class="size-12 rounded-lg bg-background-dark flex items-center justify-center border border-border-dark group-hover:border-primary/30 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+</div>
+<h3 class="text-white text-xl font-bold">Automatización (RPA + IA)</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+                                Conexión de sistemas legacy con inteligencia moderna. Eliminamos la entrada manual de datos y tareas repetitivas.
+                            </p>
+</div>
+<a class="mt-6 text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all" href="#">
+                            Ver más <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col justify-between bg-surface-dark p-6 rounded-lg border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+<div class="flex flex-col gap-4">
+<div class="size-12 rounded-lg bg-background-dark flex items-center justify-center border border-border-dark group-hover:border-primary/30 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<h3 class="text-white text-xl font-bold">Consultoría Estratégica</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+                                Auditoría de factibilidad técnica y hojas de ruta para la adopción de IA. Evita gastos en pilotos que nunca escalan.
+                            </p>
+</div>
+<a class="mt-6 text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all" href="#">
+                            Ver más <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Casos de Uso Micro-section -->
+<div class="mt-8 p-8 rounded-xl bg-[#171c26] border border-border-dark">
+<h3 class="text-white text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">data_usage</span>
+                        Casos de Uso Frecuentes
+                    </h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 text-sm mt-1">check_circle</span>
+<span class="text-slate-300 text-sm font-medium">Automatización administrativa y contable</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 text-sm mt-1">check_circle</span>
+<span class="text-slate-300 text-sm font-medium">Gestión documental interna masiva</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 text-sm mt-1">check_circle</span>
+<span class="text-slate-300 text-sm font-medium">Asistentes entrenados con datos propios</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 text-sm mt-1">check_circle</span>
+<span class="text-slate-300 text-sm font-medium">Reportes y análisis sin aumentar dotación</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- IAlfabetización Digital Section -->
+<section class="relative bg-background-dark py-24 border-t border-border-dark overflow-hidden" id="ialfabetizacion">
+<!-- Decoration -->
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"></div>
+<div class="relative px-4 md:px-10 lg:px-40 flex justify-center">
+<div class="w-full max-w-[1080px] grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Content -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-primary/20 w-fit">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-primary text-xs font-bold uppercase tracking-wider">Formación Ejecutiva</span>
+</div>
+<h2 class="text-white text-3xl md:text-4xl font-bold leading-tight">
+                        Programa de IAlfabetización Digital
+                    </h2>
+<p class="text-slate-400 text-lg">
+                        La IA no reemplazará a los humanos, pero los humanos que usan IA reemplazarán a los que no. Preparamos a tu equipo para el cambio de paradigma.
+                    </p>
+<div class="mt-4 pt-6 border-t border-border-dark">
+<button class="w-full sm:w-auto cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white text-base font-bold transition-colors">
+                            Unirme a la Lista de Espera 2026
+                        </button>
+<p class="text-xs text-slate-500 mt-2 text-center sm:text-left">Cupos limitados por semestre.</p>
+</div>
+</div>
+<!-- Right Accordion -->
+<div class="lg:col-span-7 flex flex-col gap-4">
+<!-- Module 1 -->
+<details class="group bg-surface-dark rounded-lg border border-border-dark open:border-primary/50 transition-all">
+<summary class="flex justify-between items-center p-5 cursor-pointer text-white font-bold select-none">
+<span class="flex items-center gap-3">
+<span class="flex items-center justify-center size-6 rounded bg-background-dark text-xs text-slate-400 border border-slate-700">1</span>
+                                Fundamentos de IA Generativa
+                            </span>
+<span class="material-symbols-outlined text-slate-400 transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed pl-[3.25rem]">
+                            Comprende cómo funcionan los LLMs (Large Language Models), sus limitaciones reales, alucinaciones y casos de uso seguros en el entorno empresarial.
+                            <div class="mt-3">
+<a class="text-primary text-xs font-bold hover:underline" href="#">Ver temario completo</a>
+</div>
+</div>
+</details>
+<!-- Module 2 -->
+<details class="group bg-surface-dark rounded-lg border border-border-dark open:border-primary/50 transition-all">
+<summary class="flex justify-between items-center p-5 cursor-pointer text-white font-bold select-none">
+<span class="flex items-center gap-3">
+<span class="flex items-center justify-center size-6 rounded bg-background-dark text-xs text-slate-400 border border-slate-700">2</span>
+                                Prompt Engineering Avanzado
+                            </span>
+<span class="material-symbols-outlined text-slate-400 transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed pl-[3.25rem]">
+                            Técnicas estructuradas para obtener resultados consistentes. Chain-of-thought, Few-shot prompting y estructuración de salidas para integración con software.
+                        </div>
+</details>
+<!-- Module 3 -->
+<details class="group bg-surface-dark rounded-lg border border-border-dark open:border-primary/50 transition-all">
+<summary class="flex justify-between items-center p-5 cursor-pointer text-white font-bold select-none">
+<span class="flex items-center gap-3">
+<span class="flex items-center justify-center size-6 rounded bg-background-dark text-xs text-slate-400 border border-slate-700">3</span>
+                                Herramientas de Productividad
+                            </span>
+<span class="material-symbols-outlined text-slate-400 transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed pl-[3.25rem]">
+                            Implementación práctica de Copilot, ChatGPT Enterprise y herramientas open source en el flujo de trabajo diario de oficinas y gerencia.
+                        </div>
+</details>
+<!-- Module 4 -->
+<details class="group bg-surface-dark rounded-lg border border-border-dark open:border-primary/50 transition-all">
+<summary class="flex justify-between items-center p-5 cursor-pointer text-white font-bold select-none">
+<span class="flex items-center gap-3">
+<span class="flex items-center justify-center size-6 rounded bg-background-dark text-xs text-slate-400 border border-slate-700">4</span>
+                                Ética y Seguridad de Datos
+                            </span>
+<span class="material-symbols-outlined text-slate-400 transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed pl-[3.25rem]">
+                            Protocolos de seguridad para evitar fugas de información sensible. Normativas vigentes y gobernanza de IA dentro de la organización.
+                        </div>
+</details>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#0b0d11] border-t border-border-dark pt-16 pb-8" id="contacto">
+<div class="px-4 md:px-10 lg:px-40 flex justify-center">
+<div class="w-full max-w-[1280px] flex flex-col gap-16">
+<!-- Footer CTA -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-16 border-b border-border-dark/50">
+<div class="text-center md:text-left">
+<h2 class="text-white text-2xl md:text-3xl font-bold tracking-tight mb-2">¿Listo para escalar con ingeniería real?</h2>
+<p class="text-slate-400">Diagnóstico inicial sin compromiso para empresas calificadas.</p>
+</div>
+<button class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-primary-hover text-white text-base font-bold transition-colors">
+                        Agendar Diagnóstico
+                    </button>
+</div>
+<!-- Footer Links -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-primary">architecture</span>
+<span class="font-bold text-lg">bestIA Engineering</span>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">
+                            Arquitectura de software inteligente para el mundo real. Sin humo, solo código y estrategia.
+                        </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold">Navegación</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="text-slate-400 hover:text-white text-sm transition-colors" href="#">Soluciones Empresas</a></li>
+<li><a class="text-slate-400 hover:text-white text-sm transition-colors" href="#">IAlfabetización</a></li>
+<li><a class="text-slate-400 hover:text-white text-sm transition-colors" href="#">Nosotros</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold">Contacto</h4>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-500 text-sm mt-1">location_on</span>
+<span class="text-slate-400 text-sm">Puerto Montt,<br/>Región de Los Lagos, Chile</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500 text-sm">mail</span>
+<a class="text-slate-400 text-sm hover:text-primary transition-colors" href="mailto:contacto@bestia.cl">contacto@bestia.cl</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold">Síguenos</h4>
+<div class="flex gap-4">
+<a class="size-10 rounded bg-surface-dark border border-border-dark flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 transition-colors" href="#">
+<span class="material-symbols-outlined">work</span> <!-- LinkedIn proxy icon -->
+</a>
+<a class="size-10 rounded bg-surface-dark border border-border-dark flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 transition-colors" href="#">
+<span class="material-symbols-outlined">photo_camera</span> <!-- Instagram proxy icon -->
+</a>
+</div>
+</div>
+</div>
+<!-- Copyright -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 text-xs text-slate-600">
+<p>Copyright © 2026 bestIA Engineering. Todos los derechos reservados.</p>
+<div class="flex gap-6">
+<a class="hover:text-slate-400 transition-colors" href="#">Política de Privacidad</a>
+<a class="hover:text-slate-400 transition-colors" href="#">Uso de Datos</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
