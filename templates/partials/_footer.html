@@ -1,3 +1,4 @@
+{% load static %}
 <!-- Footer -->
 <footer class="bg-[#0b0d11] border-t border-border-dark pt-16 pb-8" id="contacto">
     <div class="px-4 md:px-10 lg:px-40 flex justify-center">
@@ -21,8 +22,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                 <div class="flex flex-col gap-4">
                     <div class="flex items-center gap-2 text-white">
-                        <span class="material-symbols-outlined text-primary">architecture</span>
-                        <span class="font-bold text-lg">bestIA Engineering</span>
+                        <img src="{% static 'img/logo-bestia.png' %}" alt="bestIA Engineering" class="h-8 w-auto">
                     </div>
                     <p class="text-slate-500 text-sm leading-relaxed">
                         Inteligencia Artificial aplicada desde Puerto Montt. Soluciones profesionales para empresas del
