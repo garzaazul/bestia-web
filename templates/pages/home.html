@@ -308,26 +308,33 @@ autónomos, automatización, consultoría y formación profesional." }}{% endblo
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-primary/20 w-fit">
                     <span class="size-2 rounded-full bg-primary animate-pulse"></span>
-                    <span class="text-primary text-xs font-bold uppercase tracking-wider">Formación Ejecutiva</span>
+                    <span class="text-primary text-xs font-bold uppercase tracking-wider">Formación Práctica</span>
                 </div>
                 <h2 class="text-white text-3xl md:text-4xl font-bold leading-tight">
-                    Programa de IAlfabetización Digital
+                    Inteligencia Artificial para el Mundo Real
                 </h2>
-                <p class="text-slate-400 text-lg">
-                    La IA no reemplazará a los humanos, pero los humanos que usan IA reemplazarán a los que no.
-                    Preparamos equipos de empresas e instituciones de la región para usar inteligencia artificial de
-                    manera profesional y segura.
-                </p>
+                <div class="flex flex-col gap-4">
+                    <p class="text-slate-400 text-lg">
+                        Olvídate de los tecnicismos. Aprende a usar la IA como una herramienta diaria para trabajar
+                        menos, lograr más y mantenerte competitivo.
+                    </p>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        La inteligencia artificial ya está cambiando el trabajo. No usarla es una desventaja hoy mismo.
+                        Este programa está diseñado para que <strong class="text-slate-300">cualquier persona</strong>,
+                        sin ser experta en tecnología, entienda y aplique estas herramientas desde el primer día.
+                    </p>
+                </div>
                 <div class="mt-4 pt-6 border-t border-border-dark">
                     <form id="waitlist-form" method="post" action="{% url 'academy:waitlist' %}">
                         {% csrf_token %}
                         <input type="hidden" name="source" value="home">
                         <button type="submit"
                             class="w-full sm:w-auto cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white text-base font-bold transition-colors">
-                            Unirme a la Lista de Espera 2026
+                            Me interesa la próxima edición
                         </button>
                     </form>
-                    <p class="text-xs text-slate-500 mt-2 text-center sm:text-left">Cupos limitados por semestre.</p>
+                    <p class="text-xs text-slate-500 mt-2 text-center sm:text-left">Te avisaremos solo cuando abramos
+                        cupos. Sin spam.</p>
                 </div>
             </div>
             <!-- Right Accordion -->
@@ -340,18 +347,14 @@ autónomos, automatización, consultoría y formación profesional." }}{% endblo
                         <span class="flex items-center gap-3">
                             <span
                                 class="flex items-center justify-center size-6 rounded bg-background-dark text-xs text-slate-400 border border-slate-700">1</span>
-                            Fundamentos de IA Generativa
+                            Escribe mejor y más rápido
                         </span>
                         <span
                             class="material-symbols-outlined text-slate-400 transition-transform group-open:rotate-180">expand_more</span>
                     </summary>
                     <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed pl-[3.25rem]">
-                        Comprende cómo funcionan los LLMs (Large Language Models), sus limitaciones reales,
-                        alucinaciones y casos de uso seguros en el entorno empresarial.
-                        <div class="mt-3">
-                            <a class="text-primary text-xs font-bold hover:underline"
-                                href="{% url 'leads:contact' %}">Ver temario completo</a>
-                        </div>
+                        Redacta correos difíciles, resume documentos largos y crea informes profesionales en segundos.
+                        Deja que la IA se encargue del "borrador" para que tú te enfoques en las decisiones.
                     </div>
                 </details>
                 <!-- Module 2 -->
@@ -362,14 +365,14 @@ autónomos, automatización, consultoría y formación profesional." }}{% endblo
                         <span class="flex items-center gap-3">
                             <span
                                 class="flex items-center justify-center size-6 rounded bg-background-dark text-xs text-slate-400 border border-slate-700">2</span>
-                            Prompt Engineering Avanzado
+                            Crea contenido visual simple
                         </span>
                         <span
                             class="material-symbols-outlined text-slate-400 transition-transform group-open:rotate-180">expand_more</span>
                     </summary>
                     <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed pl-[3.25rem]">
-                        Técnicas estructuradas para obtener resultados consistentes. Chain-of-thought, Few-shot
-                        prompting y estructuración de salidas para integración con software.
+                        Genera imágenes para tus presentaciones, ilustra tus ideas o crea contenido para redes sociales.
+                        Convierte texto en material visual atractivo sin ser diseñador.
                     </div>
                 </details>
                 <!-- Module 3 -->
@@ -380,14 +383,14 @@ autónomos, automatización, consultoría y formación profesional." }}{% endblo
                         <span class="flex items-center gap-3">
                             <span
                                 class="flex items-center justify-center size-6 rounded bg-background-dark text-xs text-slate-400 border border-slate-700">3</span>
-                            Herramientas de Productividad
+                            Organiza tu caos diario
                         </span>
                         <span
                             class="material-symbols-outlined text-slate-400 transition-transform group-open:rotate-180">expand_more</span>
                     </summary>
                     <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed pl-[3.25rem]">
-                        Implementación práctica de Copilot, ChatGPT Enterprise y herramientas open source en el flujo de
-                        trabajo diario de oficinas y gerencia.
+                        Usa la IA como tu asistente personal. Planifica tu semana, prioriza tareas pendientes y organiza
+                        proyectos complejos paso a paso.
                     </div>
                 </details>
                 <!-- Module 4 -->
@@ -398,14 +401,32 @@ autónomos, automatización, consultoría y formación profesional." }}{% endblo
                         <span class="flex items-center gap-3">
                             <span
                                 class="flex items-center justify-center size-6 rounded bg-background-dark text-xs text-slate-400 border border-slate-700">4</span>
-                            Ética y Seguridad de Datos
+                            Impulsa tu carrera o negocio
                         </span>
                         <span
                             class="material-symbols-outlined text-slate-400 transition-transform group-open:rotate-180">expand_more</span>
                     </summary>
                     <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed pl-[3.25rem]">
-                        Protocolos de seguridad para evitar fugas de información sensible. Normativas vigentes y
-                        gobernanza de IA dentro de la organización.
+                        Mejora tu CV, prepara respuestas para entrevistas laborales o, si tienes un negocio, crea
+                        descripciones de productos y planes de marketing efectivos.
+                    </div>
+                </details>
+                <!-- Module 5 -->
+                <details
+                    class="group bg-surface-dark rounded-lg border border-border-dark open:border-primary/50 transition-all">
+                    <summary
+                        class="flex justify-between items-center p-5 cursor-pointer text-white font-bold select-none">
+                        <span class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center size-6 rounded bg-background-dark text-xs text-slate-400 border border-slate-700">5</span>
+                            Uso responsable y sin miedo
+                        </span>
+                        <span
+                            class="material-symbols-outlined text-slate-400 transition-transform group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed pl-[3.25rem]">
+                        Aprende qué es cierto y qué no. Protege tus datos privados, detecta errores comunes y usa la
+                        tecnología con criterio y seguridad.
                     </div>
                 </details>
             </div>
