@@ -12,10 +12,11 @@
                     <p class="text-slate-400">Empresas de Puerto Montt, la Región de Los Lagos y todo Chile confían en
                         bestIA. Conversemos.</p>
                 </div>
-                <a href="{% url 'leads:contact' %}"
-                    class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-primary-hover text-white text-base font-bold transition-colors">
-                    Agendar Diagnóstico
-                </a>
+                <button onclick="openChatModal()"
+                    class="flex min-w-[200px] cursor-pointer items-center justify-center gap-2 rounded-lg h-12 px-8 bg-primary hover:bg-primary-hover text-white text-base font-bold transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+                    Iniciar Diagnóstico IA
+                </button>
             </div>
 
             <!-- Footer Links -->

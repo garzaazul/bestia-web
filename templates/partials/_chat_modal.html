@@ -1,0 +1,52 @@
+<div id="ai-chat-modal" class="fixed inset-0 z-[60] hidden" aria-labelledby="modal-title" role="dialog"
+    aria-modal="true">
+    <!-- Backdrop -->
+    <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity opacity-0" id="chat-backdrop"></div>
+
+    <!-- Modal Panel -->
+    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+        <div class="relative transform overflow-hidden rounded-lg bg-slate-900/90 border border-slate-700 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg backdrop-blur-md opacity-0 scale-95 translate-y-4 sm:translate-y-0"
+            id="chat-panel">
+
+            <!-- Header -->
+            <div class="bg-white/5 px-4 py-3 sm:px-6 flex justify-between items-center border-b border-slate-700">
+                <h3 class="text-base font-semibold leading-6 text-white flex items-center gap-2" id="modal-title">
+                    <span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+                    Asistente Técnico bestIA
+                </h3>
+                <button type="button" id="close-chat-btn" class="text-slate-400 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+
+            <!-- Body (Chat Area) -->
+            <div class="px-4 py-6 sm:px-6 h-[400px] overflow-y-auto flex flex-col gap-4" id="chat-messages">
+                <!-- Welcome Message -->
+                <div class="flex items-start gap-3">
+                    <div
+                        class="size-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30 flex-shrink-0">
+                        <span class="material-symbols-outlined text-primary text-xs">smart_toy</span>
+                    </div>
+                    <div
+                        class="bg-surface-dark border border-slate-700 rounded-lg rounded-tl-none p-3 text-sm text-slate-300">
+                        <p>Hola, soy el asistente virtual de bestIA. ¿En qué puedo ayudarte hoy para modernizar tu
+                            empresa?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer (Input) -->
+            <div class="bg-white/5 px-4 py-3 sm:px-6 border-t border-slate-700">
+                <form class="flex gap-2" onsubmit="event.preventDefault();">
+                    <input type="text"
+                        class="flex-1 rounded-md border-0 bg-slate-800 text-white shadow-sm ring-1 ring-inset ring-slate-700 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 px-3 py-2"
+                        placeholder="Escribe tu consulta...">
+                    <button type="submit"
+                        class="inline-flex justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">send</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
