@@ -1,0 +1,7 @@
+providers = ["python"]
+
+[phases.setup]
+nixPkgs = ["python312"]
+
+[phases.build]
+cmds = ["mkdir -p staticfiles", "python manage.py collectstatic --noinput"]
