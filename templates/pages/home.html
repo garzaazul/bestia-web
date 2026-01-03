@@ -433,4 +433,124 @@ autónomos, automatización, consultoría y formación profesional." }}{% endblo
         </div>
     </div>
 </section>
+
+<!-- Contact Section -->
+<section class="bg-[#0b0d11] py-24 border-t border-border-dark" id="contact-form">
+    <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+        <div class="w-full max-w-[1080px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                <!-- Text Info -->
+                <div class="flex flex-col gap-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
+                        <span class="text-primary text-xs font-bold uppercase tracking-wider">Hablemos</span>
+                    </div>
+                    <h2 class="text-white text-3xl md:text-5xl font-black leading-tight tracking-tight">
+                        ¿Listo para modernizar tu operativa?
+                    </h2>
+                    <p class="text-slate-400 text-lg leading-relaxed">
+                        Completa el formulario y un ingeniero de nuestro equipo te contactará para agendar un
+                        diagnóstico inicial sin costo.
+                    </p>
+
+                    <div class="flex flex-col gap-6 mt-4">
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 p-3 rounded-lg bg-surface-dark border border-border-dark text-primary">
+                                <span class="material-symbols-outlined">mail</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-base">Correo Electrónico</h4>
+                                <a href="mailto:contacto@bestia.cl"
+                                    class="text-slate-400 text-sm hover:text-white transition-colors">contacto@bestia.cl</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 p-3 rounded-lg bg-surface-dark border border-border-dark text-primary">
+                                <span class="material-symbols-outlined">location_on</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-base">Puerto Montt, Chile</h4>
+                                <p class="text-slate-400 text-sm">Disponible para reuniones presenciales en la X Región.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 p-3 rounded-lg bg-surface-dark border border-border-dark text-primary">
+                                <span class="material-symbols-outlined">schedule</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-base">Horario</h4>
+                                <p class="text-slate-400 text-sm">Lu-Vi: 09:00 - 18:00 hrs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div
+                    class="bg-surface-dark p-8 md:p-10 rounded-2xl border border-border-dark shadow-2xl relative overflow-hidden group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    </div>
+
+                    <form method="post" action="{% url 'leads:contact' %}" class="relative flex flex-col gap-5">
+                        {% csrf_token %}
+                        <input type="hidden" name="source" value="home_contact_section">
+
+                        <div class="flex flex-col gap-2">
+                            <label for="id_name" class="text-slate-300 text-sm font-bold">Nombre Completo</label>
+                            <input type="text" name="name" id="id_name" required
+                                class="w-full h-12 px-4 rounded-lg bg-background-dark border border-border-dark text-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-600"
+                                placeholder="Ej. Juan Pérez">
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <label for="id_company" class="text-slate-300 text-sm font-bold">Empresa /
+                                Organización</label>
+                            <input type="text" name="company" id="id_company"
+                                class="w-full h-12 px-4 rounded-lg bg-background-dark border border-border-dark text-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-600"
+                                placeholder="Ej. Empresa SPA">
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <label for="id_email" class="text-slate-300 text-sm font-bold">Correo Corporativo</label>
+                            <input type="email" name="email" id="id_email" required
+                                class="w-full h-12 px-4 rounded-lg bg-background-dark border border-border-dark text-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-600"
+                                placeholder="nombre@empresa.com">
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <label for="id_interest" class="text-slate-300 text-sm font-bold">¿Qué necesitas?</label>
+                            <select name="interest" id="id_interest" required
+                                class="w-full h-12 px-4 rounded-lg bg-background-dark border border-border-dark text-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="solutions">Desarrollo de Software / Sistemas</option>
+                                <option value="agents">Agentes IA & Automatización</option>
+                                <option value="academy">Formación / IAlfabetización</option>
+                                <option value="consulting">Consultoría Estratégica</option>
+                                <option value="other">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <label for="id_message" class="text-slate-300 text-sm font-bold">Mensaje</label>
+                            <textarea name="message" id="id_message" rows="4"
+                                class="w-full p-4 rounded-lg bg-background-dark border border-border-dark text-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-600 resize-none"
+                                placeholder="Cuéntanos brevemente sobre tu proyecto o desafío..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="mt-2 w-full flex cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary-hover text-white text-base font-bold transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40">
+                            Enviar Mensaje
+                        </button>
+
+                        <p class="text-xs text-slate-500 text-center">
+                            Tus datos están seguros. No enviamos spam.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
