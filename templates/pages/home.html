@@ -103,17 +103,57 @@ autónomos, automatización, consultoría y formación profesional." }}{% endblo
         <div class="w-full max-w-[1080px] flex flex-col gap-12">
             <!-- Header -->
             <div class="flex flex-col gap-4 max-w-[720px]">
-                <h2 class="text-white text-3xl md:text-4xl font-bold tracking-tight">Servicios de IA para Empresas
-                    Reales</h2>
+                <h2 class="text-white text-3xl md:text-4xl font-bold tracking-tight">Desarrollo de Software y Sistemas
+                    con IA</h2>
                 <p class="text-slate-400 text-lg">
-                    Desde Puerto Montt, diseñamos e implementamos soluciones de inteligencia artificial para empresas de
-                    la Región de Los Lagos, todo Chile y el mundo. Automatización real, consultoría técnica y resultados
-                    operativos concretos.
+                    Desde Puerto Montt desarrollamos sistemas de gestión, automatización operativa y modernización de
+                    software para empresas de la Región de Los Lagos y todo Chile. Integramos inteligencia artificial
+                    cuando aporta valor real a tus procesos.
                 </p>
             </div>
             <!-- Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1: Sistemas de Gestión -->
+                <div
+                    class="group flex flex-col justify-between bg-surface-dark p-6 rounded-lg border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+                    <div class="flex flex-col gap-4">
+                        <div
+                            class="size-12 rounded-lg bg-background-dark flex items-center justify-center border border-border-dark group-hover:border-primary/30 group-hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-3xl">inventory</span>
+                        </div>
+                        <h3 class="text-white text-xl font-bold">Sistemas de Gestión a Medida</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Desarrollamos sistemas administrativos y operativos adaptados a tu negocio: gestión de
+                            inventarios, control de proyectos, registro de clientes, facturación. La IA se integra para
+                            automatizar tareas y asistir a tu equipo.
+                        </p>
+                    </div>
+                    <a class="mt-6 text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
+                        href="{% url 'leads:contact' %}">
+                        Ver más <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <!-- Card 2: Automatización -->
+                <div
+                    class="group flex flex-col justify-between bg-surface-dark p-6 rounded-lg border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+                    <div class="flex flex-col gap-4">
+                        <div
+                            class="size-12 rounded-lg bg-background-dark flex items-center justify-center border border-border-dark group-hover:border-primary/30 group-hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-3xl">automation</span>
+                        </div>
+                        <h3 class="text-white text-xl font-bold">Automatización de Procesos</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Eliminamos tareas manuales repetitivas conectando tus sistemas existentes. Automatizamos
+                            entrada de datos, generación de reportes, envío de notificaciones. La IA aporta inteligencia
+                            para decisiones y análisis.
+                        </p>
+                    </div>
+                    <a class="mt-6 text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
+                        href="{% url 'leads:contact' %}">
+                        Ver más <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <!-- Card 3: Asistentes IA -->
                 <div
                     class="group flex flex-col justify-between bg-surface-dark p-6 rounded-lg border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
                     <div class="flex flex-col gap-4">
@@ -121,10 +161,11 @@ autónomos, automatización, consultoría y formación profesional." }}{% endblo
                             class="size-12 rounded-lg bg-background-dark flex items-center justify-center border border-border-dark group-hover:border-primary/30 group-hover:text-primary transition-colors">
                             <span class="material-symbols-outlined text-3xl">smart_toy</span>
                         </div>
-                        <h3 class="text-white text-xl font-bold">Agentes Autónomos &amp; RAG</h3>
+                        <h3 class="text-white text-xl font-bold">Asistentes Inteligentes</h3>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            Sistemas que razonan sobre tu propia base de conocimiento. Perfecto para empresas con
-                            grandes volúmenes de documentación técnica, normativas o procedimientos internos.
+                            Asistentes conversacionales que responden consultas, buscan información y ejecutan acciones
+                            en tus sistemas. Entrenados con tu documentación y datos. Disponibles 24/7 vía web o
+                            WhatsApp.
                         </p>
                     </div>
                     <a class="mt-6 text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
@@ -132,37 +173,19 @@ autónomos, automatización, consultoría y formación profesional." }}{% endblo
                         Ver más <span class="material-symbols-outlined text-sm">arrow_forward</span>
                     </a>
                 </div>
-                <!-- Card 2 -->
+                <!-- Card 4: Modernización -->
                 <div
                     class="group flex flex-col justify-between bg-surface-dark p-6 rounded-lg border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
                     <div class="flex flex-col gap-4">
                         <div
                             class="size-12 rounded-lg bg-background-dark flex items-center justify-center border border-border-dark group-hover:border-primary/30 group-hover:text-primary transition-colors">
-                            <span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+                            <span class="material-symbols-outlined text-3xl">upgrade</span>
                         </div>
-                        <h3 class="text-white text-xl font-bold">Automatización (RPA + IA)</h3>
+                        <h3 class="text-white text-xl font-bold">Modernización de Software</h3>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            Conectamos sistemas antiguos con inteligencia moderna. Ideal para empresas con procesos
-                            administrativos repetitivos o entrada manual de datos que consumen tiempo valioso.
-                        </p>
-                    </div>
-                    <a class="mt-6 text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
-                        href="{% url 'leads:contact' %}">
-                        Ver más <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
-                </div>
-                <!-- Card 3 -->
-                <div
-                    class="group flex flex-col justify-between bg-surface-dark p-6 rounded-lg border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-                    <div class="flex flex-col gap-4">
-                        <div
-                            class="size-12 rounded-lg bg-background-dark flex items-center justify-center border border-border-dark group-hover:border-primary/30 group-hover:text-primary transition-colors">
-                            <span class="material-symbols-outlined text-3xl">psychology</span>
-                        </div>
-                        <h3 class="text-white text-xl font-bold">Consultoría Estratégica</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Evaluamos la viabilidad técnica de proyectos de IA en tu organización. Evitamos inversiones
-                            en pilotos que nunca llegan a producción y diseñamos hojas de ruta realistas.
+                            Actualizamos y expandimos sistemas antiguos sin desechar lo que ya funciona. Agregamos
+                            funcionalidades, mejoramos interfaces, conectamos plataformas y, si tiene sentido,
+                            incorporamos IA.
                         </p>
                     </div>
                     <a class="mt-6 text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
@@ -171,29 +194,101 @@ autónomos, automatización, consultoría y formación profesional." }}{% endblo
                     </a>
                 </div>
             </div>
-            <!-- Casos de Uso Micro-section -->
-            <div class="mt-8 p-8 rounded-xl bg-[#171c26] border border-border-dark">
+            <!-- Casos de Uso por Sector -->
+            <div class="mt-12 p-8 rounded-xl bg-[#171c26] border border-border-dark">
                 <h3 class="text-white text-lg font-bold mb-6 flex items-center gap-2">
-                    <span class="material-symbols-outlined text-primary">data_usage</span>
-                    Casos de Uso Frecuentes
+                    <span class="material-symbols-outlined text-primary">business_center</span>
+                    Casos de Uso por Sector
                 </h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="flex items-start gap-3">
-                        <span class="material-symbols-outlined text-primary shrink-0 text-sm mt-1">check_circle</span>
-                        <span class="text-slate-300 text-sm font-medium">Automatización administrativa y contable</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Sector 1 -->
+                    <div>
+                        <h4 class="text-white font-bold text-sm mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm">local_shipping</span>
+                            Empresas Productivas y Distribución
+                        </h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary text-xs mt-0.5">▸</span>
+                                <span class="text-slate-400 text-xs">Control de inventarios con alertas
+                                    automáticas</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary text-xs mt-0.5">▸</span>
+                                <span class="text-slate-400 text-xs">Automatización de órdenes de compra</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary text-xs mt-0.5">▸</span>
+                                <span class="text-slate-400 text-xs">Bot de WhatsApp para pedidos de clientes</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="flex items-start gap-3">
-                        <span class="material-symbols-outlined text-primary shrink-0 text-sm mt-1">check_circle</span>
-                        <span class="text-slate-300 text-sm font-medium">Gestión documental interna masiva</span>
+                    <!-- Sector 2 -->
+                    <div>
+                        <h4 class="text-white font-bold text-sm mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm">work</span>
+                            Servicios Profesionales
+                        </h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary text-xs mt-0.5">▸</span>
+                                <span class="text-slate-400 text-xs">Gestión de proyectos con seguimiento
+                                    automatizado</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary text-xs mt-0.5">▸</span>
+                                <span class="text-slate-400 text-xs">Asistente IA para consultas de clientes</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary text-xs mt-0.5">▸</span>
+                                <span class="text-slate-400 text-xs">Reportería automática de horas y facturación</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="flex items-start gap-3">
-                        <span class="material-symbols-outlined text-primary shrink-0 text-sm mt-1">check_circle</span>
-                        <span class="text-slate-300 text-sm font-medium">Asistentes entrenados con datos propios</span>
+                    <!-- Sector 3 -->
+                    <div>
+                        <h4 class="text-white font-bold text-sm mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm">school</span>
+                            Instituciones y Educación
+                        </h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary text-xs mt-0.5">▸</span>
+                                <span class="text-slate-400 text-xs">Gestión documental con búsqueda inteligente</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary text-xs mt-0.5">▸</span>
+                                <span class="text-slate-400 text-xs">Automatización de procesos administrativos</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary text-xs mt-0.5">▸</span>
+                                <span class="text-slate-400 text-xs">Chatbot de atención a estudiantes/usuarios</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="flex items-start gap-3">
-                        <span class="material-symbols-outlined text-primary shrink-0 text-sm mt-1">check_circle</span>
-                        <span class="text-slate-300 text-sm font-medium">Reportes y análisis sin aumentar
-                            dotación</span>
+                    <!-- Sector 4 -->
+                    <div>
+                        <h4 class="text-white font-bold text-sm mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm">store</span>
+                            Retail y Comercio
+                        </h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary text-xs mt-0.5">▸</span>
+                                <span class="text-slate-400 text-xs">Plataforma de ventas con predicción de
+                                    demanda</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary text-xs mt-0.5">▸</span>
+                                <span class="text-slate-400 text-xs">Integración web, WhatsApp y ventas
+                                    presenciales</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary text-xs mt-0.5">▸</span>
+                                <span class="text-slate-400 text-xs">Análisis automático de comportamiento de
+                                    clientes</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
