@@ -139,6 +139,14 @@
             const chatInput = chatForm.querySelector('input');
             const chatMessages = document.getElementById('chat-messages');
 
+            // Utility to make links clickable
+            const formatLinks = (text) => {
+                const urlRegex = /(https?:\/\/[^\s]+)/g;
+                return text.replace(urlRegex, (url) => {
+                    return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline break-all font-medium">${url}</a>`;
+                });
+            };
+
             const appendMessage = (role, text) => {
                 const isUser = role === 'user';
                 const div = document.createElement('div');
@@ -147,12 +155,13 @@
                 const icon = isUser ? 'person' : 'smart_toy';
                 const bgClass = isUser ? 'bg-primary/20 border-primary/30' : 'bg-surface-dark border-slate-700';
 
+                // Use formatLinks for the content
                 div.innerHTML = `
                     <div class="size-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30 flex-shrink-0">
                         <span class="material-symbols-outlined text-primary text-xs">${icon}</span>
                     </div>
                     <div class="${bgClass} border rounded-lg p-3 text-sm text-slate-300 ${isUser ? 'rounded-tr-none' : 'rounded-tl-none'}">
-                        <p>${text}</p>
+                        <p>${formatLinks(text)}</p>
                     </div>
                 `;
                 chatMessages.appendChild(div);
