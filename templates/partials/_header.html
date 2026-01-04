@@ -22,10 +22,11 @@
                     <a class="text-slate-300 hover:text-white text-sm font-medium transition-colors"
                         href="#contacto">Contacto</a>
                 </nav>
-                <a href="{% url 'leads:contact' %}"
-                    class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary hover:bg-primary-hover text-white text-sm font-bold transition-colors">
-                    <span class="truncate">Agendar Diagnóstico</span>
-                </a>
+                <button onclick="openChatModal()"
+                    class="flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-5 bg-primary hover:bg-primary-hover text-white text-sm font-bold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">smart_toy</span>
+                    <span class="truncate">Hablar con bestIA</span>
+                </button>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -46,10 +47,11 @@
                 href="#nosotros">Nosotros</a>
             <a class="text-slate-300 hover:text-white text-sm font-medium transition-colors"
                 href="#contacto">Contacto</a>
-            <a href="{% url 'leads:contact' %}"
-                class="flex cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary hover:bg-primary-hover text-white text-sm font-bold transition-colors mt-2">
-                Agendar Diagnóstico
-            </a>
+            <button onclick="openChatModal()"
+                class="flex cursor-pointer items-center justify-center gap-2 rounded-lg h-10 px-5 bg-primary hover:bg-primary-hover text-white text-sm font-bold transition-colors mt-2">
+                <span class="material-symbols-outlined text-[18px]">smart_toy</span>
+                Hablar con bestIA
+            </button>
         </nav>
     </div>
 </header>
