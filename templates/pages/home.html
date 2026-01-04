@@ -377,14 +377,10 @@ autónomos, automatización, consultoría y formación profesional." }}{% endblo
                     </p>
                 </div>
                 <div class="mt-4 pt-6 border-t border-border-dark">
-                    <form id="waitlist-form" method="post" action="{% url 'academy:waitlist' %}">
-                        {% csrf_token %}
-                        <input type="hidden" name="source" value="home">
-                        <button type="submit"
-                            class="w-full sm:w-auto cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white text-base font-bold transition-colors">
-                            Me interesa la próxima edición
-                        </button>
-                    </form>
+                    <button id="btn-academy-cta" type="button"
+                        class="w-full sm:w-auto cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white text-base font-bold transition-colors shadow-lg">
+                        Me interesa la próxima edición
+                    </button>
                     <p class="text-xs text-slate-500 mt-2 text-center sm:text-left">Te avisaremos solo cuando abramos
                         cupos. Sin spam.</p>
                 </div>
