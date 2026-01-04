@@ -10,14 +10,18 @@ const projectsData = [
         category: "Gestión Inmobiliaria",
         icon: "apartment",
         status: { type: "active", label: "En Operación", color: "emerald" },
-        client: { name: "Edificio Costanera", location: "Puerto Montt" },
+        client: {
+            name: "Los Cimientos",
+            location: "Puerto Montt",
+            url: "https://administracion.loscimientos.cl/"
+        },
         aiFeature: { title: "Asistente para residentes", type: "Evolución IA" },
         challenge: "Administración compleja de gastos comunes, reservas de espacios y comunicación con residentes.",
         solution: "Sistema web integral para administradores y app para residentes. Control total financiero y operativo.",
         gallery: [
-            "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            "/static/img/los-cimientos-01.png",
+            "/static/img/los-cimientos-02.png",
+            "/static/img/los-cimientos-03.png"
         ]
     },
     {
@@ -206,6 +210,17 @@ function createProjectCard(project) {
     const statusTextColor = project.status.color === 'emerald' ? 'text-emerald-500' : 'text-purple-400';
     const statusPulse = project.status.color === 'emerald' ? '' : 'animate-pulse';
 
+    // Client Link Logic
+    let clientHTML = `<span class="block text-slate-400 text-sm mb-1 line-clamp-1">${project.client.name}</span>`;
+    if (project.client.url) {
+        clientHTML = `
+            <a href="${project.client.url}" target="_blank" rel="noopener noreferrer" 
+               class="block text-slate-400 text-sm mb-1 line-clamp-1 hover:text-primary transition-colors hover:underline">
+                ${project.client.name} <span class="material-symbols-outlined text-[10px] align-middle">open_in_new</span>
+            </a>
+        `;
+    }
+
     // HTML Structure
     const cardHTML = `
         <div class="group bg-surface-dark rounded-xl border border-border-dark overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col h-full">
@@ -240,7 +255,7 @@ function createProjectCard(project) {
                         <span class="${statusTextColor} text-xs font-bold uppercase">${project.status.label}</span>
                     </div>
                     <div class="text-right">
-                        <span class="block text-slate-400 text-sm mb-1 line-clamp-1">${project.client.name}</span>
+                        ${clientHTML}
                         <span class="text-primary text-xs font-bold block">${project.aiFeature.type}</span>
                         <span class="text-slate-500 text-xs">${project.aiFeature.title}</span>
                     </div>
