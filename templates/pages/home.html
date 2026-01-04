@@ -7,10 +7,9 @@ autónomos, automatización, consultoría y formación profesional." }}{% endblo
 {% block content %}
 <!-- Hero Section -->
 <section class="relative flex min-h-[85vh] w-full flex-col justify-center bg-background-dark overflow-hidden">
-    <!-- Abstract Technical Background -->
-    <div class="absolute inset-0 z-0 bg-cover bg-center opacity-40"
-        style='background-image: linear-gradient(rgba(17, 19, 24, 0.7) 0%, rgba(17, 19, 24, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCaNOhnlkcmGWDLb307qMTIkTJ7p09f41XVcOJpp21Y10kq8Ua9DeAwAMkFZGfz2dVoh2phvFkrqmSwbay1TU-DXiV_VOyGKhclCBLPjpW_EhXnVs56XYPuFcDuXxf6RofVddRwmWyjCmQOH51GH14M94F1SVpg4pEkxZ7ujvQqg8io33ymtH2we_RNWGrSAJjiVoM_zWz2Il4ZWvCld-N7cwTsh0J8_HDvwZ_KjPYXl4PQ4w3753ybmoG9LG9oNKJBlhsmrmgCy8");'>
-    </div>
+    <!-- Particles Background -->
+    <div id="hero-particles" class="absolute inset-0 z-0 opacity-100"></div>
+
     <div class="relative z-10 px-4 md:px-10 lg:px-40 flex flex-1 items-center justify-center py-10">
         <div class="max-w-[960px] flex flex-col items-start gap-8">
             <div class="flex flex-col gap-4 text-left">
@@ -38,6 +37,10 @@ autónomos, automatización, consultoría y formación profesional." }}{% endblo
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-500">
         <span class="material-symbols-outlined text-3xl">arrow_downward</span>
     </div>
+
+    <!-- Scripts for Particles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.0.6/tsparticles.slim.bundle.min.js"></script>
+    <script src="{% static 'js/hero-particles.js' %}"></script>
 </section>
 
 <!-- About Section (Nosotros) -->
