@@ -105,7 +105,7 @@ class ImageCarousel {
         `).join('');
 
         return `
-            <div class="relative h-48 w-full overflow-hidden group/carousel" id="${carouselId}">
+            <div class="relative h-64 w-full overflow-hidden group/carousel" id="${carouselId}">
                 <!-- Slides -->
                 <div class="carousel-track h-full w-full relative">
                     ${slidesHtml}
