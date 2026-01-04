@@ -20,7 +20,7 @@ class ChatSessionAdmin(admin.ModelAdmin):
     list_display = ['session_id', 'user_email', 'total_messages', 'is_active', 'created_at', 'updated_at']
     list_filter = ['is_active', 'created_at']
     search_fields = ['session_id', 'user_email', 'user_name']
-    readonly_fields = ['session_id', 'created_at', 'updated_at', 'total_messages']
+    readonly_fields = ['session_id', 'created_at', 'updated_at', 'total_messages', 'history', 'summary']
     inlines = [ChatMessageInline]
 
 

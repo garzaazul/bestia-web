@@ -29,6 +29,15 @@ class ChatSession(models.Model):
     user_email = models.EmailField('Email del usuario', blank=True, null=True)
     user_name = models.CharField('Nombre', max_length=100, blank=True)
     
+    # Persistencia de Chat (Gemini History)
+    history = models.JSONField(
+        'Historial',
+        default=list,
+        blank=True,
+        help_text='Historial completo de la conversación (formato Gemini)'
+    )
+    summary = models.TextField('Resumen', blank=True, null=True)
+    
     # Metadatos de la sesión
     created_at = models.DateTimeField('Creado', auto_now_add=True)
     updated_at = models.DateTimeField('Última actividad', auto_now=True)
