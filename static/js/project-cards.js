@@ -30,14 +30,18 @@ const projectsData = [
         category: "Seguridad Privada",
         icon: "security",
         status: { type: "active", label: "En Operación", color: "emerald" },
-        client: { name: "Seguridad Austral", location: "Puerto Varas" },
+        client: {
+            name: "Campomar Sistemas",
+            location: "Puerto Varas",
+            url: "https://asistencia.campomarsistemas.cl/"
+        },
         aiFeature: { title: "Detección de anomalías", type: "Evolución IA" },
         challenge: "Dificultad para controlar turnos y asistencia en múltiples ubicaciones remotas en tiempo real.",
         solution: "App móvil con georeferencia para marcaje de turnos y panel de control central para supervisores.",
         gallery: [
-            "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            "/static/img/campomar-01.png",
+            "/static/img/campomar-02.png",
+            "/static/img/campomar-03.png"
         ]
     },
     {
