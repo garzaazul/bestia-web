@@ -192,14 +192,15 @@ def chat_with_gemini(request):
         )
 
         # 4. Inicializar Modelo
-        model_name = "gemini-2.0-flash-exp"
+        model_name = "gemini-flash-latest"
         try:
             model = genai.GenerativeModel(
                 model_name=model_name,
                 system_instruction=CONTEXTO_BESTIA
             )
-        except Exception:
-            model_name = "gemini-1.5-flash"
+        except Exception as e:
+            print(f"Error initializing model {model_name}: {e}")
+            model_name = "gemini-pro"
             model = genai.GenerativeModel(
                 model_name=model_name,
                 system_instruction=CONTEXTO_BESTIA
